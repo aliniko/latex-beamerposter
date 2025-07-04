@@ -1,0 +1,97 @@
+\documentclass[final]{beamer}
+\usepackage[size=a1,scale=1.25]{beamerposter}
+\usetheme{ConfPoster} % Can be Gemini, Simple, etc.
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{tikz}
+
+% Title and Authors
+\title{Smarter AI Agents for StarWars Planet Wars}
+\author{Ali Nekoh, Mat: 12345678 \and Team Member 2, Mat: 87654321}
+\institute{Frankfurt University of Applied Sciences}
+
+\setbeamercolor{block title}{fg=white,bg=blue!70}
+\setbeamercolor{block body}{fg=black,bg=white}
+
+\begin{document}
+\begin{frame}[t]
+
+  % Logos
+  \begin{minipage}{0.15\linewidth}
+    \includegraphics[width=\linewidth]{frauas_logo.png}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.15\linewidth}
+    \includegraphics[width=\linewidth]{scopa_logo.png}
+  \end{minipage}
+
+  \begin{center}
+    \maketitle
+  \end{center}
+
+  \begin{columns}[t]
+    \begin{column}{0.32\linewidth}
+      \begin{block}{🔍 Introduction}
+        Planet Wars is a two-player RTS simulation used to test AI strategies. This project compares a heuristic AI agent (SmarterAgent) with an evolutionary agent (SmarterAgent4).
+      \end{block}
+
+      \begin{block}{🎮 Our AI Agents}
+        \textbf{SmarterAgent:}
+        \begin{itemize}
+          \item Chooses strongest owned planet
+          \item Attacks weakest enemy/neutral
+        \end{itemize}
+        \textbf{SmarterAgent4 (RHEA):}
+        \begin{itemize}
+          \item Uses simulations
+          \item Population-based planning
+          \item Greedy heuristic
+        \end{itemize}
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.32\linewidth}
+      \begin{block}{🛠 Technical Design}
+        \begin{itemize}
+          \item Kotlin-based
+          \item Game loop + State evaluation
+          \item RHEA implemented with 5-step rollout
+        \end{itemize}
+        \includegraphics[width=\linewidth]{agent_architecture.png}
+      \end{block}
+
+      \begin{block}{📜 Code Highlight}
+        \texttt{val source = ... maxByOrNull \{ it.nShips \}}  
+        \texttt{val target = ... minByOrNull \{ it.nShips \}}
+      \end{block}
+    \end{column>
+
+    \begin{column}{0.32\linewidth}
+      \begin{block}{📊 Evaluation & Results}
+        \begin{itemize}
+          \item Win % vs RandomAgent and baseline
+          \item Evolutionary agent improved success rate by 25%
+        \end{itemize}
+        \includegraphics[width=\linewidth]{results_chart.png}
+      \end{block}
+
+      \begin{block}{🎓 Conclusion}
+        \begin{itemize}
+          \item RHEA outperformed simple heuristic
+          \item Future: add reinforcement learning and fog-of-war
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{📚 References}
+        \begin{itemize}
+          \item Game Framework: PlanetWars 2025
+          \item Supervisor: Prof. XYZ
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+\end{document}
